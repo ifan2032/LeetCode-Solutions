@@ -1,0 +1,16 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        arr = []
+        if(x < 0):
+            return False
+        while(not(x == 0)): 
+            arr.append(x%10)
+            x = x//10
+        mid = len(arr) // 2
+        
+        for index in range(mid):
+            if not(arr[index] == arr[len(arr)-1-index]):
+                return False
+            
+        return True
+        
